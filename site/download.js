@@ -7,8 +7,8 @@
   const note = document.getElementById("dl-note");
   if (os === "mac") {
     primary.textContent = "Command line for macOS";
-    primary.href = "#developers";
-    note.textContent = "The desktop app is for Windows and Linux for now; on macOS, use the command line.";
+    primary.href = "https://github.com/liormedan/kv-vault/blob/main/docs/CLI.md";
+    note.textContent = "Desktop app: Windows and Linux. On macOS, the command line.";
     return;
   }
   try {
@@ -21,7 +21,7 @@
     primary.href = pick.browser_download_url;
     primary.textContent = `Download for ${os === "linux" ? "Linux (AppImage)" : "Windows"}`;
     const mb = Math.round(pick.size / 1048576);
-    note.textContent = `Version ${release.tag_name.replace(/^v/, "")} · ${mb} MB · free, MIT licensed.${os === "linux" ? " chmod +x the file, then run it; a .deb is in All downloads." : ""}`;
+    note.textContent = `Version ${release.tag_name.replace(/^v/, "")} · ${mb} MB · MIT license`;
   } catch {
     // offline or rate-limited: the release page still works
   }
